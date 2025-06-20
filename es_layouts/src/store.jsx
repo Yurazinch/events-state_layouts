@@ -50,7 +50,7 @@ export class Store extends Component {
     }
 
     onSwitch() {
-        this.setState( prevState => ({ isCard: !prevState.isCard }));
+        this.setState({ isCard: !this.state.isCard });
         
         if (this.state.isCard === true) {
             this.styleCard = "display: flex";
