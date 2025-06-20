@@ -6,7 +6,7 @@ export function IconSwitch({props}) {
 
     return (
         <div className="icon__switsh" onClick={e => onSwitch(e)}>
-            { state.isCard === true ? view_card : view_list }
+            { state.isCard ? view_card : view_list }
         </div>
     )
 }
