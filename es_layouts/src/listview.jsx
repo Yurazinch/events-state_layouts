@@ -1,12 +1,14 @@
-import { Item } from "./skuItem";
+export function ListView ({elem}) {
 
-export function ListView (props) {
-
-    let itemList = props.cards.map(item => item = <Item />);
+    const lists =  elem.map((item, index) => (
+    <li key={index}>
+        <img src={item.img} alt={item.name} />
+        <p>{item.name} {item.color} Price: {item.price}</p>            
+    </li>));
 
     return (
         <ul>
-            {itemList}
+            {lists}
         </ul>
     )
 }
