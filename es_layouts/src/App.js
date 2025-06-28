@@ -7,17 +7,6 @@ import { ListView } from './listview';
 
 function App() {
 
-  const image = {
-    card: {
-      img: {grid},
-      alt: "view card"   
-    },
-    list: {
-      img: {list},
-      alt: "view list"    
-    } 
-  }
-
   const cards = [
     {
       name: "Nike Metcon 2",
@@ -67,8 +56,8 @@ function App() {
     <body>
       <div className='icons' onClick={ handleClick }>
         { isCard ? 
-          ( <img className='icons__img' src={image.list.img} alt={image.list.alt} /> ) :
-          ( <img className='icons__img' src={image.card.img} alt={image.card.alt} /> ) }
+          ( <img className='icons__img' src={list} alt='Показать список' /> ) :
+          ( <img className='icons__img' src={grid} alt='Показать карточки' /> ) }
       </div>    
       <div className="views">
         { isCard ? ( <CardsView elem = { cards }/> ) : ( <ListView elem = { cards }/> )}
