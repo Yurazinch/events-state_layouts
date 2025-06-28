@@ -1,5 +1,6 @@
 import './App.css';
-//import {Store} from './store';
+import grid from './img/grid_view_24dp_E3E3E3.svg';
+import list from './img/view_list_24dp_E3E3E3.svg'
 import { useState } from 'react';
 import { CardsView } from './cardsview';
 import { ListView } from './listview';
@@ -8,11 +9,11 @@ function App() {
 
   const image = {
     card: {
-      img: "./img/dashboard_24dp_E3E3E3.png",
+      img: {grid},
       alt: "view card"   
     },
     list: {
-      img: "./img/list_24dp_E3E3E3.png",
+      img: {list},
       alt: "view list"    
     } 
   }
@@ -64,12 +65,12 @@ function App() {
   
   return (
     <body>
-      <div onClick={ handleClick }>
+      <div className='icons' onClick={ handleClick }>
         { isCard ? 
-          ( <img src={image.list.img} alt={image.list.alt} /> ) :
-          ( <img src={image.card.img} alt={image.card.alt} /> ) }
+          ( <img className='icons__img' src={image.list.img} alt={image.list.alt} /> ) :
+          ( <img className='icons__img' src={image.card.img} alt={image.card.alt} /> ) }
       </div>    
-      <div className="cards">
+      <div className="views">
         { isCard ? ( <CardsView elem = { cards }/> ) : ( <ListView elem = { cards }/> )}
       </div>
     </body>
